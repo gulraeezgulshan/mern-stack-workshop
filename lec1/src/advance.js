@@ -133,4 +133,99 @@ console.log(first, last); */
 
 //Aliasing
 const { last: l, first: f } = p;
-console.log(f, l);
+//console.log(f, l);
+
+//Difference b/w parameter & Arguement
+
+/* function printFullName(person) {
+  console.log(person.first, person.last);
+} */
+
+const p1 = {
+  first: "ali",
+  last: "hassan",
+  city: "karachi",
+  siblings: {
+    brother: "husnain",
+    sister: "sana",
+  },
+};
+
+//Declaration
+function printFullName({ first, city }) {
+  console.log(first, city);
+}
+
+//Calling
+//printFullName(p1);
+
+/************ * 4) Spread Operator ***********/
+
+const n = "gulraiz";
+
+//console.log(n);
+//console.log([...n]);
+
+const group1 = ["aliyan", "farhan", "chris"];
+const group2 = ["jack", "bob", "peter"];
+
+//const main = [...group1, ...group2];
+//const main = [...group2, ...group1];
+//const main = [...group2, ...group2];
+//const main = [group1, group2];
+
+//console.log([group1, group2]);
+//console.log([...group1, ...group2]);
+
+const a = [...group1, ...group2];
+//console.log(friends);
+
+//Changes in content of b will be reflected in a also if we don't use ... operator
+//const b = a;
+//b[0] = "arbaz";
+
+//Original array's content does not change if we use spread operator
+const b = [...a];
+b[0] = "arbaz";
+
+//console.log(a);
+//console.log(b);
+
+//Using spread operator on objects
+
+const q = { name: "albert", age: 30, city: "karachi" };
+const m = { ...q, country: "pakistan" };
+const o = { ...q, name: "shabana", country: "pakistan" };
+
+//console.log(q);
+//console.log(m);
+//console.log(o);
+
+/************ * 4) Rest Operator ***********/
+
+const countries = ["pakistan", "india", "china", "russia", "iran"];
+
+/* const [first, second] = countries;
+console.log(first, second); */
+
+/* const [first, second, ...rest] = countries;
+console.log(first, second, rest); */
+
+/* const [first, ...rest] = countries;
+console.log(first, rest); */
+
+//Using rest operator in objects
+
+const car = {
+  name: "swift",
+  make: "suzuki",
+  model: 2016,
+  type: "hatch-back",
+  color: "gray",
+};
+
+/* const { name, make, ...rest } = car;
+console.log(name, make, rest); */
+
+const { type, color, ...rest } = car;
+console.log(type, color, rest);
