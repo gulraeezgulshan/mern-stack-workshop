@@ -1,6 +1,13 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
+//Named Import
+import { books } from "./books";
+
+//Default Import
+import Book from "./Book";
+import App from "./App";
+
 //First Component of React
 
 //Special Kind of function because it's a component
@@ -195,33 +202,6 @@ const Book = (props) => {
 
 /********************************Property Destructing *******************/
 
-const books = [
-  {
-    title: "American Marxism",
-    author: "Mark R. Levin",
-    image:
-      "https://images-na.ssl-images-amazon.com/images/I/81TgUz%2B7JBS._AC_UL200_SR200,200_.jpg",
-  },
-  {
-    title: "Malibu Rising: A Novel",
-    author: "Taylor Jenkins Reid",
-    image:
-      "https://images-na.ssl-images-amazon.com/images/I/914BkcGCNgS._AC_UL200_SR200,200_.jpg",
-  },
-  {
-    title: "The 48 Laws of Power",
-    author: "Robert Greene",
-    image:
-      "https://images-na.ssl-images-amazon.com/images/I/71951W96oWL._AC_UL200_SR200,200_.jpg",
-  },
-  {
-    title: "The Midnight Library: A Novel",
-    author: "Matt Haig",
-    image:
-      "https://images-na.ssl-images-amazon.com/images/I/81YzHKeWq7L._AC_UL200_SR200,200_.jpg",
-  },
-];
-
 /* function BookList() {
   return (
     <section>
@@ -249,8 +229,11 @@ function BookList() {
   return (
     <section>
       {books.map((book) => {
+        //const { title, author, image } = book;
         return (
-          <Book title={book.title} author={book.author} image={book.image} />
+          /*  <Book title={book.title} author={book.author} image={book.image} /> */
+          /* <Book key={book.id} book={book} /> */
+          <Book key={book.id} {...book} />
         );
       })}
     </section>
@@ -276,10 +259,10 @@ function BookList() {
   );
 }; */
 
-const Book = ({ title, author, image }) => {
-  /*   console.log(title);
+/* const Book = ({ title, author, image }) => {
+    console.log(title);
   console.log(author);
-  console.log(image); */
+  console.log(image); 
 
   return (
     <article>
@@ -289,6 +272,9 @@ const Book = ({ title, author, image }) => {
     </article>
   );
 };
+ */
 
 //<html>, <div>, <ul>
-ReactDOM.render(<BookList />, document.getElementById("root"));
+//ReactDOM.render(<BookList />, document.getElementById("root"));
+
+ReactDOM.render(<App />, document.getElementById("root"));
