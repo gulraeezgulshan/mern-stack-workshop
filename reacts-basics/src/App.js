@@ -1,9 +1,9 @@
 import React from "react";
-import UseStateCounter from "./advance-react/1-useState/5-useState-counter";
+import UseEffectApi from "./advance-react/2-useEffect/2-useEffect-api";
 const App = () => {
   return (
     <div>
-      <UseStateCounter />
+      <UseEffectApi />
     </div>
   );
 };
