@@ -1,9 +1,12 @@
 import React from "react";
-import UseEffectApi from "./advance-react/2-useEffect/2-useEffect-api";
+
+import Forms from "./advance-react/3-forms/2-forms.js";
+import "bootstrap/dist/css/bootstrap.css";
+
 const App = () => {
   return (
     <div>
-      <UseEffectApi />
+      <Forms />
     </div>
   );
 };
